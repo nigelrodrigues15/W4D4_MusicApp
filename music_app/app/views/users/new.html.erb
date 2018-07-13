@@ -1,5 +1,21 @@
-<h1>New User</h1>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Back', users_path %>
+<div>
+  <form action="<%= users_url %>" method="post">
+    <%= auth_token %>
+    <h1>Sign up</h1>
+    <label>Email</label>
+    <input type="text" name="users[email]" value="<%= @user.email %>">
+    <label>Password</label>
+    <input type="password" name="users[password]" value="<%= @user.password %>">
+    <br><br>
+    <input type="submit" value="Sign Up">
+    
+    <br><br>
+  </form>
+  
+  <form action="<%= new_session_url %>" method="post">
+    <input type="hidden" name="_method" value="get">
+    <%= auth_token %>
+    <input type="submit" value="Log in">
+  </form>
+</div>

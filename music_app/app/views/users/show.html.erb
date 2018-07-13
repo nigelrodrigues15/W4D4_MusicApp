@@ -1,4 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div >
+  
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h1>Hello, <%= @user.email %></h1> <br>
+
+<form action="<%= users_url %>" method="post">
+  <%= auth_token %>
+  
+  <label>Email</label>
+  <%= @user.email %>
+  
+</form>
+<br>
+<!-- <%#= link_to 'Edit', edit_user_path(@user) %> | -->
+<form action="<%= session_url %>" method="post">
+    <%= auth_token %>
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
+</div>

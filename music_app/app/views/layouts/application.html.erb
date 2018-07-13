@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MusicApp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>MusicApp</title>
+  <%= csrf_meta_tags %>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body class="fancy_body">
+  <h1 class="header_style">Music App</h1>
+  <div>
+    <center class="internals"> <%= yield %> </center>
+  </div>  
+</body>
 </html>
