@@ -13,9 +13,5 @@
     <br><br>
   </form>
   
-  <form action="<%= new_session_url %>" method="post">
-    <input type="hidden" name="_method" value="get">
-    <%= auth_token %>
-    <input type="submit" value="Log in">
-  </form>
+  <%= button_to "Log in", new_session_url, method: :get %>
 </div>
